@@ -19,7 +19,7 @@ gulp.task('babel', function () {
   browserify({
     debug: true
   })
-  .require('./src/js/app.js', { entry: true })
+  .require('./src/js/Views/app.js', { entry: true })
     .transform(babelify)
     .bundle()
     .pipe(source('bundle.js'))

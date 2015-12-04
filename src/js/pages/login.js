@@ -1,5 +1,8 @@
 import React, { PropTypes } from 'react';
 import $ from "../jquery";
+import {Link} from "react-router";
+
+import User from "../Models/user";
 
 class Login extends React.Component {
   constructor(props){
@@ -10,24 +13,17 @@ class Login extends React.Component {
 
   signIn(){
     let data = {username: this.refs.username.value, password: this.refs.password.value};
-    $.ajax({
-      url: 'https://api.parse.com/1/login?' + $.param(data),
-      type: 'GET',
-      success: (response) => { console.log(response);}
-    });
-  }
-
-  componentDidMount(){
-
+    User.signIn(data);
   }
 
   render () {
     return (
       <div>
-        <h1>hello! Please log in!</h1>
+        <h1>Hello! Please log in!</h1>
         <input type="text" ref="username"/>
         <input type="password" ref="password"/>
         <input type="submit" id="submit" value="login" onClick={this.signIn}/>
+        <Link to={"register"}>Sign up!</Link>
       </div>
     );
   }

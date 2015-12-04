@@ -10,9 +10,15 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "dist/bower_components"
   ],
   "dependencies": {
-
-  }
+    "bourbon": "~4.2.6",
+    "neat": "~1.7.2"
+  },
+  "homepage": "https://github.com/TimGass/homework_week9_wed",
+  "description": "",
+  "main": "",
+  "moduleType": []
 }
